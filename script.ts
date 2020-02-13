@@ -45,19 +45,19 @@ let calcAverageProductPrice = (arrayOfProducts: Product[]): number => {
 console.log(calcAverageProductPrice(products));
 
 interface InventoryItem {
-  name: Product;
+  product: Product;
   quantity: number;
 }
 let inventory: InventoryItem[] = [
-  { name: { name: "motor", price: 10.0 }, quantity: 10 },
-  { name: { name: "sensor", price: 12.5 }, quantity: 4 },
-  { name: { name: "led", price: 1.0 }, quantity: 20 }
+  { product: { name: "motor", price: 10.0 }, quantity: 10 },
+  { product: { name: "sensor", price: 12.5 }, quantity: 4 },
+  { product: { name: "led", price: 1.0 }, quantity: 20 }
 ];
 
 let calcInventoryValue = (arrayOfInventoryItems: InventoryItem[]): number => {
-  let productTotal = 0;
+  let productTotal: number = 0;
   arrayOfInventoryItems.forEach(item => {
-    productTotal += item.name.price * item.quantity;
+    productTotal += item.product.price * item.quantity;
   });
   return productTotal;
 };
